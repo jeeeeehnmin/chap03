@@ -34,6 +34,7 @@ public class EmpRepositoryTest {
 
 		SimpleDateFormat f = new SimpleDateFormat("yyyy-mm-dd");
 
+		/*
 		empRepository.save(new Emp(new BigInteger("1001"), "김사랑", Emp.Gender.F, "사원", 1013, f.parse("2007-03-01"), new BigDecimal(300), null, 20));
 		empRepository.save(new Emp(new BigInteger("1002"), "한예슬", Emp.Gender.F, "대리", 1005, f.parse("2007-04-02"), new BigDecimal(250), new BigDecimal(80), 30));
 		empRepository.save(new Emp(new BigInteger("1003"), "오지호", Emp.Gender.M, "과장", 1005, f.parse("2005-02-10"), new BigDecimal(500), new BigDecimal(100), 30));
@@ -48,7 +49,8 @@ public class EmpRepositoryTest {
 		empRepository.save(new Emp(new BigInteger("1012"), "강혜정", Emp.Gender.F, "사원", 1006, f.parse("2007-08-09"), new BigDecimal(300), null, 20));
 		empRepository.save(new Emp(new BigInteger("1013"), "박중훈", Emp.Gender.M, "부장", 1003, f.parse("2002-10-09"), new BigDecimal(560), null, 20));
 		empRepository.save(new Emp(new BigInteger("1014"), "조인성", Emp.Gender.M, "사원", 1006, f.parse("2007-11-09"), new BigDecimal(250), null, 10));
-
+	
+		*/
 	}
 	
 	@Test

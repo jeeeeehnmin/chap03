@@ -8,16 +8,21 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Entity
 @Data
+//@ToString(exclude={"dept"})
 @NoArgsConstructor
 @AllArgsConstructor
 public class Emp {
@@ -40,11 +45,20 @@ public class Emp {
 	private Integer mgr;
 	@Temporal(TemporalType.DATE) // java의 date와 db의 date 타입 일치
 	private Date hiredate;
-//	@Column(precision = 7, scale = 2)
 	private BigDecimal sal;
-//	@Column(precision = 7, scale = 2)
 	private BigDecimal comm;
-//	@Column(precision = 2)
-	private Integer deptno;
 
+	/*
+	 * foreign key 설정
+	 * emp를 조회할때마다 dept도 조회함
+	 * Lazy --> 제외하고 
+	 */
+	
+//	@ManyToOne
+//  @ManyToOne(fetch=FetchType.EAGER)				//이걸로 옵션하면, dept도 같이 조회
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="deptno")
+    private Dept dept;
+    
+//	private Integer deptno;
 }
